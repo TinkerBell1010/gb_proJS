@@ -58,16 +58,17 @@ body {
   color: #311A40;
   line-height: 2;
 }
-.product-item button {
+
+.buy-btn {
   background-color: #AC5E89;
   color: #F3F2EE;
   font-size: 18px;
   padding: 10px;
-  cursor: pointer;
   border: 2px solid #AC5E89;
   transition: all 0.4s ease;
+  cursor: pointer;
 }
-.product-item button:hover {
+.buy-btn:hover {
   background-color: #F3F2EE;
   color: #AC5E89;
 }
@@ -83,5 +84,19 @@ body {
   line-height: 2;
   font-size: 18px;
   align-self: flex-end;
+  font-weight: bold;
+}
+
+.sum {
+  float: right;
+  margin-bottom: 50px;
+  font-size: 22px;
+  line-height: 2;
+  color: #311A40;
+}
+.sum span {
+  color: #C0AE1C;
+  line-height: 2;
+  font-size: 30px;
   font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
