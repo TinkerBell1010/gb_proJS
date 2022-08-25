@@ -1,40 +1,25 @@
+const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+
 class ProductList {
     constructor(container = '.products-list') {
         this.container = container;
         this.goods = [];
-        this._fetchProducts(); //рекомендация, чтобы метод был вызван в текущем классе
-        this.render(); //вывод товаров на страницу
+        this._getProducts()
+            .then(data => { //data - объект js
+                this.goods = data;
+                this.render();
+                document.querySelectorAll('.buy-btn').forEach(btn => btn.addEventListener('click', (e) => cart.changeProduct(e.target.getAttribute('data-id'), 'add')));
+            });
     }
-    _fetchProducts() {
-        this.goods = [{
-                id: 1,
-                img: 'img/1.png',
-                title: 'Notebook',
-                description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque quidem fuga libero iure illum, in magni recusandae dicta officiis beatae praesentium ipsam dolores accusamus.',
-                price: 2000
-            },
-            {
-                id: 2,
-                img: 'img/1.png',
-                title: 'Mouse',
-                description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque quidem fuga libero iure illum, in magni recusandae dicta officiis beatae praesentium ipsam dolores accusamus.',
-                price: 20
-            },
-            {
-                id: 3,
-                img: 'img/1.png',
-                title: 'Keyboard',
-                description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque quidem fuga libero iure illum, in magni recusandae dicta officiis beatae praesentium ipsam dolores accusamus.',
-                price: 200
-            },
-            {
-                id: 4,
-                img: 'img/1.png',
-                title: 'Gamepad',
-                description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque quidem fuga libero iure illum, in magni recusandae dicta officiis beatae praesentium ipsam dolores accusamus.',
-                price: 50
-            },
-        ];
+
+    _getProducts() {
+
+        return fetch(`${API}/catalogData.json`)
+            .then(result => result.json())
+            .catch(error => {
+                console.log(error);
+            });
+
     }
 
     render() {
@@ -43,6 +28,7 @@ class ProductList {
             const item = new ProductItem(product);
             block.insertAdjacentHTML("beforeend", item.render());
         }
+        this.getPriceSum();
     }
 
     getPriceSum() {
@@ -54,11 +40,11 @@ class ProductList {
 
 class ProductItem {
     constructor(product) {
-        this.title = product.title;
-        this.id = product.id;
+        this.title = product.product_name;
+        this.id = product.id_product;
         this.price = product.price;
-        this.img = product.img;
-        this.description = product.description;
+        this.img = 'img/1.png';
+        this.description = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque quidem fuga libero iure illum, in magni recusandae dicta officiis beatae praesentium ipsam dolores accusamus.';
     }
     render() {
         return `<div class="product-item">
@@ -66,31 +52,94 @@ class ProductItem {
                 <h3>${this.title}</h3>
                 <p class="item-desc">${this.description}</p>
                 <p class="item-price">${this.price}$</p>
-                <button class="buy-btn">Купить</button>
-            </div>`
+                <button class="buy-btn" data-id="${this.id}">Купить</button>
+            </div>`;
     }
 }
 
 let list = new ProductList();
-list.getPriceSum();
 
 class CartList {
-    addProduct() {
+    constructor(container = '.cart') {
+        this.container = container;
+        this.goods = [];
+        this._getProducts()
+            .then(data => { //data - объект js
+                this.goods = data.contents;
+                this.render();
+            });
+    }
+
+    _getProducts() {
+
+        return fetch(`${API}/getBasket.json`)
+            .then(result => result.json())
+            .catch(error => {
+                console.log(error);
+            });
 
     }
-    delProduct() {
 
+    getSum() {
+        let sumPrice = 0;
+        let sumQuantity = 0;
+        this.goods.forEach(product => {
+            sumPrice += product.price * product.quantity;
+            sumQuantity += product.quantity;
+        });
+        document.querySelector('.cart').insertAdjacentHTML("beforeend", `<p class="cartSum">Количество товаров: ${sumQuantity}</p><p class="cartSum">Итого: <span>${sumPrice}$</span></p>`);
     }
-    changeProduct() {
 
+    addProduct() {}
+    delProduct() {}
+
+    changeProduct(id, action) {
+        let index = this.goods.findIndex((good) => good.id_product == id);
+        if (action == "add") {
+            this.goods[index].quantity++;
+        }
+        if (action == "del" && this.goods[index].quantity > 0) {
+            this.goods[index].quantity--;
+        }
+        document.querySelector('.cart').innerHTML = '';
+        this.render();
     }
     render() {
-
+        const block = document.querySelector(this.container);
+        for (let product of this.goods) {
+            const item = new ProductCart(product);
+            block.insertAdjacentHTML("beforeend", item.render());
+        }
+        this.getSum();
+        document.querySelectorAll('.del-btn').forEach(btn => btn.addEventListener('click', (e) => cart.changeProduct(e.target.getAttribute('data-id'), 'del')));
     }
 }
 
 class ProductCart {
+    constructor(product) {
+        this.title = product.product_name;
+        this.id = product.id_product;
+        this.price = product.price;
+        this.img = 'img/1.png';
+        this.quantity = product.quantity;
+    }
     render() {
-
+        return `<div class="cart-item">
+                    <img src="${this.img}">
+                    <div class="cartItem-info">
+                        <h3>${this.title}</h3>
+                        <p class="cartItem-quantity">Кол-во: ${this.quantity}</p>
+                        <p class="cartItem-price">Цена: <span>${this.price}$</span></p>
+                    </div>
+                    <button class="del-btn" data-id="${this.id}">&#128937;</button>
+                </div>`;
     }
 }
+
+let cart = new CartList();
+
+document.querySelector('.cart-button').addEventListener('click', () => {
+    document.querySelector('.cart').classList.toggle('show');
+});
+
+console.log(cart);
