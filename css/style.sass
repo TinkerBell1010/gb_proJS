@@ -1,0 +1,162 @@
+*
+    margin: 0
+    padding: 0
+    font-family: 'Helvetica', sans-serif
+
+body
+    background-color: #F3F2EE
+
+.header
+    background-color: #311A40
+    padding: 50px 0
+
+    & > .container
+        display: flex
+        justify-content: flex-end
+        position: relative
+
+.container
+    max-width: 1200px
+    margin: 0 auto
+
+.cart-button
+    border: 3px solid #C0AE1C
+    padding: 10px 20px
+    background-color: #C0AE1C
+    border-radius: 10px
+    color: #F3F2EE
+    font-size: 1.4em
+    transition: all 0.4s ease
+    cursor: pointer
+    &:hover
+        color: #C0AE1C
+        background-color: #F3F2EE
+
+.products-list
+    width: 100%
+    display: grid
+    padding: 50px 0
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    column-gap: 30px
+
+.product-item
+    display: flex
+    flex-direction: column
+    width: 100%
+    box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%)
+    padding: 20px
+    box-sizing: border-box
+    background-color: transparent
+
+    & img
+        object-fit: cover
+        width: 100%
+
+    & h3
+        color: #311A40
+        line-height: 2
+
+.buy-btn
+    background-color: #AC5E89
+    color: #F3F2EE
+    font-size: 18px
+    padding: 10px
+    border: 2px solid #AC5E89
+    transition: all .4s ease
+    cursor: pointer
+
+    &:hover
+        background-color: #F3F2EE
+        color: #AC5E89
+
+.item-desc
+    color: #311A40
+    font-size: 14px
+    text-align: justify
+
+.item-price
+    color: #C0AE1C
+    line-height: 2
+    font-size: 18px
+    align-self: flex-end
+    font-weight: bold
+
+.sum
+    float: right
+    margin-bottom: 50px
+    font-size: 22px
+    line-height: 2
+    color: #311A40
+
+    & span
+        color: #C0AE1C
+        line-height: 2
+        font-size: 30px
+        font-weight: bold
+
+.cart
+    position: absolute
+    box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%)
+    padding: 20px
+    background-color: #F3F2EE
+    top: -1000px
+    right: 150px
+    transition: all .8s ease
+
+    &-item
+        display: flex
+        margin-bottom: 10px
+        padding-bottom: 10px
+        border-bottom: 1px solid #D2D2D2
+
+        & img
+            width: 100px
+            margin-right: 20px
+            object-fit: contain
+            align-self: center
+
+        & h3
+            color: #311A40
+            line-height: 2
+
+        & p
+            color: #311A40
+            font-size: 14px
+            line-height: 1.5
+
+        & span
+            color: #C0AE1C
+            font-size: 16px
+            font-weight: bold
+
+    &Item-info
+        width: 150px
+
+.del-btn
+    background-color: #f44336
+    border: 1px solid #f44336
+    color: #F3F2EE
+    width: 35px
+    height: 35px
+    font-size: 18px
+    font-weight: 600
+    align-self: center
+    border-radius: 50%
+    cursor: pointer
+    transition: all .4s ease
+
+    &:hover
+        background-color: #F3F2EE
+        color: #f44336
+
+.show
+    top: 0
+
+.cartSum
+    text-align: right
+    line-height: 1.5
+    color: #311A40
+
+    & span
+        color: #C0AE1C
+        font-weight: bold
