@@ -12,7 +12,7 @@ body
 
     & > .container
         display: flex
-        justify-content: flex-end
+        justify-content: space-between
         position: relative
 
 .container
@@ -43,8 +43,8 @@ body
     display: flex
     flex-direction: column
     width: 100%
-    box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%)
     padding: 20px
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 16px 38px -12px
     box-sizing: border-box
     background-color: transparent
 
@@ -99,7 +99,7 @@ body
     box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%)
     padding: 20px
     background-color: #F3F2EE
-    top: -1000px
+    top: 0px
     right: 150px
     transition: all .8s ease
 
@@ -160,3 +160,23 @@ body
     & span
         color: #C0AE1C
         font-weight: bold
+
+
+.hide
+    display: none
+
+.search-form
+    border-bottom: 1px solid #fff
+
+.search-field
+    border: none
+    background-color: transparent
+    padding: 10px
+    font-size: 18px
+    color: #fff
+
+.btn-search
+    border: none
+    background-color: transparent
+    color: #fff
+    font-size: 18px
