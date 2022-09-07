@@ -6,15 +6,16 @@ const app = new Vue({
         catalogUrl: '/catalogData.json',
         products: [],
         filtered: [],
+        showCart: false,
         cart: [],
         userSearch: '',
         cartSumPrice: '',
         cartSumProducts: '',
-        show: false
+        showError: false
     },
     methods: {
-        filter(){
-            const regexp = new RegExp(this.userSearch, 'i');
+        filter(userSearch){
+            const regexp = new RegExp(userSearch, 'i');
             this.filtered = this.products.filter(product => regexp.test(product.product_name));
 
         },
@@ -22,7 +23,7 @@ const app = new Vue({
             return fetch(url)
                 .then(result => result.json())
                 .catch(error => {
-                    console.log(error);
+                    this.showError = true;
                 })
         },
         addProduct(product){
@@ -60,7 +61,10 @@ const app = new Vue({
                     this.products.push(el);
                     this.filtered.push(el);
                }
-           });
+           })
+           .catch(error => {
+                this.showError = true;
+            })
     }
 })
 

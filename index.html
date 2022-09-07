@@ -11,42 +11,22 @@
     <div id="app">
         <header class="header">
             <div class="container">
-                <form action="#" class="search-form" @submit.prevent="filter()">
-                    <input type="text" class="search-field" v-model="userSearch">
-                    <button class="btn-search" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-                <button class="cart-button" @click="show = !show">Корзина</button>
-                <div class="cart" v-if="show">
-                    <div class="cart-item" v-for="item of cart">
-                        <img :src="item.img">
-                        <div class="cartItem-info">
-                            <h3>{{item.product_name}}</h3>
-                            <p class="cartItem-quantity">Кол-во: {{item.quantity}}</p>
-                            <p class="cartItem-price">Цена: <span>{{item.price}}$</span></p>
-                        </div>
-                        <button class="del-btn" @click="delProduct(item)">&#128937;</button>
-                    </div>
-                    <p class="cartSum">{{ this.cart.length == 0 ? "Ваша корзина пуста." : this.cartSumProducts}}</p>
-                    <p class="cartSum">{{ this.cart.length == 0 ? "" : "Итого: "}}<span>{{ this.cart.length == 0 ? "" : this.cartSumPrice}}</span></p>
-                </div>
+                <search></search>
+                <button class="cart-button" @click="showCart = !showCart">Корзина</button>
+                <cart :cart-items="cart" :visibility="showCart"></cart>
             </div>
         </header>
         <main class="container">
-            <div class="products-list">
-                <div class="product-item" v-for="product of filtered" :key="product.id_product">
-                    <img :src="product.img">
-                    <h3>{{product.product_name}}</h3>
-                    <p class="item-desc">{{product.description}}</p>
-                    <p class="item-price">{{product.price}}$</p>
-                    <button class="buy-btn" @click="addProduct(product)">Купить</button>
-                </div>
-            </div>
+            <error></error>
+            <products :products="filtered" @add-product="addProduct"></products>
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <script src="js/ProductComponent.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/SearchComponent.js"></script>
+    <script src="js/ErrorComponent.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
