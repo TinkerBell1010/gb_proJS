@@ -1,0 +1,122 @@
+.checkout
+    counter-reset: accordion
+    margin: 57px auto 93px
+
+    &__accordion
+        border-bottom: 1px solid $light-border3
+
+        &-title
+            @include text(16px, 16px, 700, $dark)
+            text-transform: uppercase
+            cursor: pointer
+            padding: 32px 0
+
+            &::before
+                counter-increment: accordion
+                content: "0" counter(accordion) "."
+                margin-right: 10px
+
+    &__form-wrapper
+        display: flex
+
+    &__form
+        padding: 39px 0 47px
+        width: 390px
+        box-sizing: border-box
+
+        &:first-of-type
+            margin: 0 160px 0 35px
+
+    &__text
+        @include text(13px, 13px, 400, $dark)
+        margin-bottom: 15px
+        text-transform: uppercase
+
+    &__text-light, &__list-item
+        @include text(13px, 13px, 400, $checkout-text)
+
+    &__label
+        display: flex
+        @include text(12px, 32px, 400, $dark)
+        text-transform: uppercase
+
+    &__list, &__radio-wrapper
+        margin: 23px 0
+
+    &__list-item
+        @include text(13px, 33px, 400, $checkout-text)
+
+    &__radio-button
+        display: none
+
+    &__label-radio
+        display: flex
+        align-items: center
+        cursor: pointer
+
+        &::before
+            display: block
+            content: ''
+            text-align: center
+            width: 14px
+            height: 14px
+            border: 2px solid $radio-border
+            border-radius: 50%
+            margin-right: 14px
+            box-sizing: border-box
+
+    &__radio-button:checked ~ &__label-radio::before
+        content: '\2b24'
+        @include text(6px, 10px, 900, $black)
+
+    &__submit-button
+        @include text(14px, 14px, 700, $dark-gray2)
+        text-transform: uppercase
+        background-color: $white
+        border: 1px solid $light2
+        padding: 19px 54px
+        margin-top: 5px
+        cursor: pointer
+        transition: all 0.4s ease
+
+        &:hover
+            background-color: $darkpink1
+            color: $white
+            border: 1px solid transparent
+
+    &__text-input
+        width: 100%
+        border: 1px solid $light2
+        @include text(14px, 45px, 400, $dark-gray2)
+        margin: 6px 0 13px
+        padding: 0 10px
+        box-sizing: border-box
+
+    &__text-red
+        @include text(13px, 33px, 400, $red)
+        margin-bottom: 17px
+
+    &__required
+        &:first-of-type
+            margin-top: 17px
+
+        &::after
+            content: '\002A'
+            @include text(17px, 32px, 400, $red)
+            margin-left: 5px
+
+    &__form-buttons
+        width: 100%
+        display: flex
+
+    &__drop-pass-link
+        @include text(14px, 14px, 400, $dark)
+        width: 100%
+        display: block
+        margin-left: 10px
+        box-sizing: border-box
+        padding: 29px 22px 0
+        transition: color 0.4s ease
+
+        &:hover
+            color: $darkpink1

@@ -1,0 +1,57 @@
+[
+    {
+        "id": 17,
+        "name": "Black Hoody",
+        "price": 52,
+        "img": "img/card-17.png"
+
+    },
+    {
+        "id": 16,
+        "name": "Brown Coat",
+        "price": 91,
+        "img": "img/card-16.png"
+    },
+    {
+        "id": 3,
+        "name": "Blue Jacket",
+        "price": 83,
+        "img": "img/card-3.png"
+    },
+    {
+        "id": 15,
+        "name": "Gray T-shirt",
+        "price": 24,
+        "img": "img/card-15.png"
+    },
+    {
+        "id": 8,
+        "name": "Blue Hoody",
+        "price": 79,
+        "img": "img/card-8.png"
+    },
+    {
+        "id": 14,
+        "name": "Letterman Jacket",
+        "price": 43,
+        "img": "img/card-14.png"
+    },
+    {
+        "id": 6,
+        "name": "Blazer",
+        "price": 86,
+        "img": "img/card-6.png"
+    },
+    {
+        "id": 13,
+        "name": "Brown Jacket",
+        "price": 55,
+        "img": "img/card-13.png"
+    },
+    {
+        "id": 18,
+        "name": "Blue T-shirt",
+        "price": 27,
+        "img": "img/card-18.png"
+    }
+]

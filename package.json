@@ -1,0 +1,24 @@
+{
+  "name": "gb_projs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TinkerBell1010/gb_proJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TinkerBell1010/gb_proJS/issues"
+  },
+  "homepage": "https://github.com/TinkerBell1010/gb_proJS#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "moment": "^2.29.4",
+    "nodemon": "^2.0.19"
+  }
+}

@@ -1,0 +1,1922 @@
+@import "vars"
+
+@mixin text($fs, $lh, $fw, $color)
+    font-size: $fs
+    line-height: $lh
+    font-weight: $fw
+    color: $color
+
+@-webkit-keyframes slide-in-top
+  0% 
+    -webkit-transform: translateY(-1000px)
+    transform: translateY(-1000px)
+    opacity: 0
+
+  100% 
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes slide-in-top
+    0%
+        -webkit-transform: translateY(-1000px)
+        transform: translateY(-1000px)
+        opacity: 0
+
+    100%
+        -webkit-transform: translateY(0)
+        transform: translateY(0)
+        opacity: 1
+
+@-webkit-keyframes heartbeat
+  from 
+    -webkit-transform: scale(1)
+    transform: scale(1)
+    -webkit-transform-origin: center center
+    transform-origin: center center
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+
+  10% 
+    -webkit-transform: scale(1.09)
+    transform: scale(1.09)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+
+  17% 
+    -webkit-transform: scale(1.02)
+    transform: scale(1.02)
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+
+  33% 
+    -webkit-transform: scale(1.13)
+    transform: scale(1.13)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+
+  45% 
+    -webkit-transform: scale(1)
+    transform: scale(1)
+    -webkit-animation-timing-function: ease-out
+    animation-timing-function: ease-out
+
+@keyframes heartbeat
+    from
+        -webkit-transform: scale(1)
+        transform: scale(1)
+        -webkit-transform-origin: center center
+        transform-origin: center center
+        -webkit-animation-timing-function: ease-out
+        animation-timing-function: ease-out
+
+    10%
+        -webkit-transform: scale(1.09)
+        transform: scale(1.09)
+        -webkit-animation-timing-function: ease-in
+        animation-timing-function: ease-in
+
+    17%
+        -webkit-transform: scale(1.02)
+        transform: scale(1.02)
+        -webkit-animation-timing-function: ease-out
+        animation-timing-function: ease-out
+
+    33%
+        -webkit-transform: scale(1.13)
+        transform: scale(1.13)
+        -webkit-animation-timing-function: ease-in
+        animation-timing-function: ease-in
+
+    45%
+        -webkit-transform: scale(1)
+        transform: scale(1)
+        -webkit-animation-timing-function: ease-out
+        animation-timing-function: ease-out
+
+@-webkit-keyframes jello-vertical
+  0% 
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+
+  30% 
+    -webkit-transform: scale3d(0.75, 1.25, 1)
+    transform: scale3d(0.75, 1.25, 1)
+
+  40% 
+    -webkit-transform: scale3d(1.25, 0.75, 1)
+    transform: scale3d(1.25, 0.75, 1)
+
+  50% 
+    -webkit-transform: scale3d(0.85, 1.15, 1)
+    transform: scale3d(0.85, 1.15, 1)
+
+  65% 
+    -webkit-transform: scale3d(1.05, 0.95, 1)
+    transform: scale3d(1.05, 0.95, 1)
+
+  75% 
+    -webkit-transform: scale3d(0.95, 1.05, 1)
+    transform: scale3d(0.95, 1.05, 1)
+
+  100% 
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+
+@keyframes jello-vertical
+    0%
+        -webkit-transform: scale3d(1, 1, 1)
+        transform: scale3d(1, 1, 1)
+
+    30%
+        -webkit-transform: scale3d(0.75, 1.25, 1)
+        transform: scale3d(0.75, 1.25, 1)
+
+    40%
+        -webkit-transform: scale3d(1.25, 0.75, 1)
+        transform: scale3d(1.25, 0.75, 1)
+
+    50%
+        -webkit-transform: scale3d(0.85, 1.15, 1)
+        transform: scale3d(0.85, 1.15, 1)
+
+    65%
+        -webkit-transform: scale3d(1.05, 0.95, 1)
+        transform: scale3d(1.05, 0.95, 1)
+
+    75%
+        -webkit-transform: scale3d(0.95, 1.05, 1)
+        transform: scale3d(0.95, 1.05, 1)
+
+    100%
+        -webkit-transform: scale3d(1, 1, 1)
+        transform: scale3d(1, 1, 1)
+
+*
+    margin: 0
+    padding: 0
+    outline: none
+    list-style-type: none
+    text-decoration: none
+
+body
+    font-family: 'Lato', sans-serif
+
+.container
+    max-width: 1140px
+    margin: 0 auto
+    box-sizing: border-box
+
+.logo
+    text-decoration: none
+    text-transform: uppercase
+    font-size: 27px
+    line-height: 32px
+    font-weight: 300
+    letter-spacing: 0.025em
+    color: $dark
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    margin-right: 37px
+
+    &-img
+        width: 59px
+        margin-right: 13px
+
+    &-pink-text
+        font-weight: 900
+        color: $darkpink1
+
+.pink-button
+    background-color: $darkpink1
+    color: $white
+    border: 1px solid transparent
+    transition: all 0.4s ease
+    cursor: pointer
+
+    &:hover
+        color: $darkpink1
+        background-color: $white
+        border-color: $darkpink1
+
+.light-button
+    background-color: transparent
+    border: 1px solid $light2
+    text-transform: uppercase
+    cursor: pointer
+    @include text(14px, 1, 700, $dark-gray2)
+    transition: all 0.4s ease
+
+    &:hover
+        background-color: $darkpink1
+        color: $white
+        border-color: transparent
+
+.drop-down
+    border: 1px solid $light-border
+    box-shadow: 0px 0px 8px 0px $light-shadow
+    -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+    animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+    &::before
+        content: ''
+        display: block
+        border-top: 1px solid $light-border
+        border-left: 1px solid $light-border
+        transform: rotate(45deg)
+        background-color: $white
+        width: 10px
+        height: 10px
+        position: absolute
+        top: -7px
+
+.main-header
+    &__top
+        border-bottom: 1px solid $light-border
+
+        & > .container
+            display: -webkit-box
+            display: -ms-flexbox
+            display: flex
+            -webkit-box-pack: justify
+            -ms-flex-pack: justify
+            justify-content: space-between
+            min-height: 100px
+            -webkit-box-align: center
+            -ms-flex-align: center
+            align-items: center
+
+        &-left
+            display: -webkit-box
+            display: -ms-flexbox
+            display: flex
+            -webkit-box-align: center
+            -ms-flex-align: center
+            align-items: center
+
+    &__search
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        border: 1px solid $light-border2
+        border-radius: 3px
+        min-height: 38px
+        -webkit-box-sizing: border-box
+        box-sizing: border-box
+        position: relative
+
+    &__browse
+        border: none
+        width: 87px
+        min-height: 100%
+        cursor: pointer
+        -webkit-box-sizing: border-box
+        box-sizing: border-box
+        font-size: 14px
+        line-height: 32px
+        font-weight: 300
+        letter-spacing: 0.025em
+        color: $dark
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        -webkit-box-align: center
+        -ms-flex-align: center
+        align-items: center
+        -webkit-box-pack: center
+        -ms-flex-pack: center
+        justify-content: center
+        background-color: $light
+        position: relative
+        border-radius: 3px 0 0 3px
+        transition: all 0.4s ease
+
+        &-img
+            margin-left: 8px
+            color: $gray-arrow
+            transition: all 0.4s ease
+
+    &__search-form
+        display: flex
+
+    &__search-input
+        border: none
+        width: 280px
+        padding: 0 16px
+        -webkit-box-sizing: border-box
+        box-sizing: border-box
+        min-height: 100%
+        border-right: 1px solid $light-border2
+        border-left: 1px solid $light-border2
+        font-size: 14px
+        line-height: 32px
+        font-weight: 300
+        letter-spacing: 0.025em
+        color: $dark
+
+        &::-webkit-input-placeholder
+            font-size: 14px
+            line-height: 32px
+            font-weight: 300
+            letter-spacing: 0.025em
+            color: $light-gray
+
+        &:-ms-input-placeholder
+            font-size: 14px
+            line-height: 32px
+            font-weight: 300
+            letter-spacing: 0.025em
+            color: $light-gray
+
+        &::-ms-input-placeholder
+            font-size: 14px
+            line-height: 32px
+            font-weight: 300
+            letter-spacing: 0.025em
+            color: $light-gray
+
+        &::placeholder
+            font-size: 14px
+            line-height: 32px
+            font-weight: 300
+            letter-spacing: 0.025em
+            color: $light-gray
+
+    &__search-submit
+        width: 36px
+        background-color: transparent
+        min-height: 100%
+        border: none
+        cursor: pointer
+
+        &-container
+            cursor: pointer
+            transition: background-color 0.4s ease
+            position: relative
+
+    &__search-icon
+        position: absolute
+        text-align: center
+        color: $light-gray
+        right: 11px
+        top: 12px
+        font-size: 14px
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        -webkit-box-align: center
+        -ms-flex-align: center
+        align-items: center
+        transition: color 0.4s ease
+
+    &__search-submit-container:hover
+        background-color: $darkpink1
+        border-radius: 0 3px 3px 0
+
+        & .main-header__search-icon
+            color: $white
+
+    &__browse-drop-down
+        position: absolute
+        min-width: 262px
+        padding: 19px 13px 22px
+        top: 37px
+        left: 0
+        background-color: $white
+        text-align: left
+        -webkit-box-sizing: border-box
+        box-sizing: border-box
+        z-index: 1
+        border-radius: 5px
+        display: none
+
+        &::before
+            left: 65px
+
+    &__category
+        list-style-type: none
+
+        & > h3
+            font-size: 14px
+            line-height: 32px
+            font-weight: 400
+            letter-spacing: 0.025em
+            color: $dark2
+            text-transform: uppercase
+            border-bottom: 1px solid $light-border3
+            padding-left: 3px
+            margin-bottom: 5px
+
+        & a:hover
+            color: $darkpink1
+
+        .main-header__browse-drop-down &:not(:first-child)
+            margin-top: 15px
+
+    &__subcategory
+        list-style-type: none
+
+        & > a
+            display: block
+            text-decoration: none
+            font-size: 14px
+            line-height: 28px
+            font-weight: 400
+            letter-spacing: 0.025em
+            color: $dark-gray
+            padding-left: 7px
+
+    &__browse-container:hover &__browse-drop-down
+        display: block
+
+    &__browse:hover
+        background-color: $darkpink1
+        color: $white
+
+    &__browse:hover &__browse-img
+        color: $white
+        transform: rotate(180deg)
+
+    &__top-right
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        -webkit-box-align: end
+        -ms-flex-align: end
+        align-items: flex-end
+        position: relative
+
+    &__adaptive-links
+        display: none
+
+    &__right-button
+        color: $dark
+        transition: color 0.4s ease
+        background-color: transparent
+        border: none
+        padding: 19px 14px
+        font-size: 25px
+        line-height: 1
+
+        &:hover
+            color: $darkpink1
+
+    &__cart-wrapper
+        margin-right: 12px
+
+    &__cart-link
+        width: 32px
+        height: 29px
+        display: block
+        padding: 16px 14px
+
+        & path
+            fill: $dark
+            transition: fill 0.4s ease
+
+        .main-header__cart-wrapper:hover & path
+            fill: $darkpink1
+
+    &__cart
+        position: absolute
+        min-width: 262px
+        padding: 21px 15px 20px 17px
+        top: 72px
+        left: 0
+        background-color: $white
+        -webkit-box-sizing: border-box
+        box-sizing: border-box
+        z-index: 1
+        border-radius: 5px
+        display: none
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
+        -webkit-box-align: center
+        -ms-flex-align: center
+        align-items: center
+
+        &::before
+            left: 23px
+
+        &-card-wrapper
+            display: flex
+            justify-content: space-between
+            width: 100%
+            padding-bottom: 16px
+            border-bottom: 1px solid rgba(237, 237, 237, 0.74)
+
+        &-card
+            display: -webkit-box
+            display: -ms-flexbox
+            display: flex
+            -webkit-box-align: center
+            -ms-flex-align: center
+            align-items: center
+            -webkit-box-pack: start
+            -ms-flex-pack: start
+            width: 100%
+            justify-content: flex-start
+        &-card-wrapper:not(:first-child)
+            margin-top: 16px
+
+        &-card-img
+            margin-right: 14px
+            width: 72px
+            height: 85px
+            object-fit: cover
+
+        &-card-info
+            width: 100%
+
+        &-card-name
+            text-transform: uppercase
+            font-size: 12px
+            line-height: 1.2
+            font-weight: 700
+            color: $dark
+
+        &-card-stars
+            margin: 10px 0 10px 1px
+
+        &-card-price
+            font-size: 12px
+            line-height: 1.2
+            font-weight: 400
+            color: $darkpink1
+            margin-left: 1px
+
+        &-card-delete
+            background-color: transparent
+            border: none
+            font-size: 16px
+            line-height: 1.2
+            font-weight: 400
+            text-transform: uppercase
+            color: $light-gray2
+            cursor: pointer
+            transition: color 0.4s ease
+
+            &:hover
+                color: $darkpink1
+
+        &-total-price
+            width: 100%
+            display: -webkit-box
+            display: -ms-flexbox
+            display: flex
+            -webkit-box-pack: justify
+            -ms-flex-pack: justify
+            justify-content: space-between
+            text-transform: uppercase
+            font-size: 16px
+            line-height: 1.2
+            font-weight: 700
+            color: $dark
+            margin: 19px 0 32px
+
+        &-checkout
+            width: 225px
+            height: 50px
+            border: 1px solid $darkpink1
+            background-color: transparent
+            font-size: 14px
+            line-height: 1.2
+            font-weight: 700
+            text-transform: uppercase
+            color: $darkpink1
+            display: flex
+            align-items: center
+            justify-content: center
+            transition: all 0.4s ease
+
+            &:hover
+                background-color: $darkpink1
+                color: $white
+
+    &__go-to-cart
+        width: 225px
+        height: 50px
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        background-color: transparent
+        border: 1px solid $light2
+        -webkit-box-align: center
+        -ms-flex-align: center
+        align-items: center
+        -webkit-box-pack: center
+        -ms-flex-pack: center
+        justify-content: center
+        font-size: 14px
+        line-height: 1.2
+        font-weight: 700
+        text-transform: uppercase
+        color: $dark-gray2
+        text-decoration: none
+        margin-top: 11px
+
+    &__cart-wrapper:hover &__cart
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+
+    &__account
+        background-color: $darkpink1
+        text-decoration: none
+        font-size: 14px
+        line-height: 32px
+        font-weight: 400
+        margin: 16px 0
+        letter-spacing: 0.025em
+        color: $white
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        -webkit-box-pack: center
+        -ms-flex-pack: center
+        justify-content: center
+        -webkit-box-align: center
+        -ms-flex-align: center
+        align-items: center
+        width: 130px
+        height: 38px
+        text-transform: capitalize
+        border: 1px solid $darkpink1
+        transition: all 0.4s ease
+
+        &:hover
+            background: $white
+            color: $darkpink1
+
+        &-img
+            margin-left: 8px
+            transition: transform 0.4s ease
+
+        &:hover &-img
+            transform: rotate(180deg)
+
+    &__nav-list
+        list-style-type: none
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        max-width: 724px
+        -webkit-box-pack: justify
+        -ms-flex-pack: justify
+        justify-content: space-between
+        margin: 0 auto
+        -webkit-box-align: center
+        -ms-flex-align: center
+        align-items: center
+
+    &__list-link
+        display: block
+        padding: 13px 22px
+        text-decoration: none
+        text-transform: uppercase
+        font-size: 14px
+        line-height: 26px
+        font-weight: 700
+        color: $dark
+        transition: color 0.4s ease
+
+        &_active
+            border-bottom: 3px solid $darkpink2
+
+    &__list-item
+        position: relative
+
+    &__list-link:hover
+        color: $darkpink1
+
+    &__mega-menu
+        position: absolute
+        top: 43px
+        left: -200px
+        z-index: 1
+        display: none
+
+        &::before
+            left: 235px
+
+        &-content
+            display: -webkit-box
+            display: -ms-flexbox
+            display: flex
+            width: 846px
+            height: 330px
+            -webkit-box-orient: vertical
+            -webkit-box-direction: normal
+            -ms-flex-direction: column
+            flex-direction: column
+            -ms-flex-line-pack: justify
+            align-content: space-between
+            -webkit-box-pack: justify
+            -ms-flex-pack: justify
+            justify-content: space-between
+            -ms-flex-wrap: wrap
+            flex-wrap: wrap
+            background-color: $white
+            border-radius: 5px
+            padding: 20px 21px 20px 25px
+            -webkit-box-sizing: border-box
+            box-sizing: border-box
+
+        &-banner
+            position: relative
+            list-style-type: none
+            width: 255px
+
+        &-banner > a
+            display: block
+
+        &-banner-text
+            position: absolute
+            color: $white
+            font-size: 22px
+            line-height: 28px
+            font-weight: 900
+            text-transform: uppercase
+            letter-spacing: 0.025em
+            right: 10px
+            bottom: 12px
+            width: 71px
+
+        & .main-header__category a
+            padding: 0
+
+        & .main-header__category
+            width: 235px
+
+        .main-header__list-item:hover &
+            display: block
+
+        .main-header__list-item:nth-last-of-type(-n+3) &
+            right: -200px
+            left: auto
+
+            &::before
+                right: 250px
+                left: auto
+
+.slider
+    background-color: $light-border3
+
+    & > .container
+        height: 614px
+        background-image: url('../img/top-img.png')
+        background-position: right -51px
+        background-repeat: no-repeat
+
+    &__text-box
+        box-sizing: border-box
+        padding-left: 12px
+        margin-top: 224px
+        border-left: 12px solid $darkpink1
+        float: left
+
+    &__text
+        font-size: 40px
+        line-height: 31px
+        font-weight: 900
+        letter-spacing: 1px
+        color: $dark
+        text-transform: uppercase
+
+    &__text-big
+        font-size: 60px
+        letter-spacing: 1.5px
+        margin-bottom: 20px
+        line-height: 45px
+
+    &__text span
+        color: $darkpink1
+
+.banners
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    padding: 98px 0
+
+    &__banner
+        display: block
+        position: relative
+
+        &:hover
+            -webkit-animation: jello-vertical 0.9s both
+            animation: jello-vertical 0.9s both
+            z-index: 3
+
+    &__banner:first-child
+        margin-bottom: 20px
+
+    &__img
+        object-fit: cover
+        width: 100%
+
+    &__text
+        position: absolute
+        z-index: 1
+        background-color: $white
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
+        left: -1px
+        top: 26px
+        padding: 16px 19px
+        text-transform: uppercase
+        font-size: 18px
+        line-height: 1.2
+        font-weight: 900
+        text-transform: uppercase
+        letter-spacing: 0.025em
+        color: $dark
+
+    &__text-pink
+        font-size: 30px
+        color: $darkpink1
+
+.fetured-items
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    &__title
+        font-size: 30px
+        line-height: 46px
+        font-weight: 700
+        letter-spacing: 0.025em
+        color: $dark
+        text-transform: capitalize
+
+    &__text
+        font-size: 14px
+        line-height: 46px
+        font-weight: 400
+        letter-spacing: 0.025em
+        color: $gray-text
+        text-align: center
+
+    &__cards
+        display: grid
+        flex-wrap: wrap
+        grid-template-columns: 1fr 1fr 1fr
+        margin: 60px 0
+        width: 100%
+        column-gap: 31px
+        row-gap: 39px
+
+    &__card
+        width: 261px
+        position: relative
+        transition: box-shadow 0.4s ease
+
+        &-link
+            display: block
+            width: 100%
+
+        &-img
+            width: 100%
+            transition: background-color 0.6s ease
+
+            & img
+                transition: opacity 0.6s ease
+                display: block
+                width: 100%
+
+        &-cart-button
+            position: absolute
+            display: none
+            flex-direction: column
+            top: 98px
+            left: 0
+            right: 0
+            pointer-events: none
+
+            &-set
+                display: flex
+                justify-content: center
+                margin: 0 auto
+
+            &-link
+                padding: 10px 12px
+                display: flex
+                background-color: transparent
+                border: 1px solid $white
+                align-items: center
+                justify-content: center
+                margin: 0 auto
+                pointer-events: all
+                transition: box-shadow 0.4s ease
+                cursor: pointer
+
+                .catalog &
+                    border-radius: 3px
+
+                &:hover
+                    box-shadow: 0 0 10px $white
+
+            &>&-link
+                margin-bottom: 8px
+
+            &-set &-link
+                margin: 0
+                padding: 10px 17px
+
+            &-set &-link:first-of-type
+                margin-right: 7px
+
+            &-img
+                margin-right: 8px
+                width: 23px
+
+            &-set &-img
+                margin: 0
+
+            &-text
+                font-size: 13px
+                line-height: 1.2
+                font-weight: 700
+                color: $white
+
+        &-text
+            padding: 19px 13px 24px
+            text-transform: uppercase
+            line-height: 1.2
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+
+        &-name
+            font-size: 13px
+            font-weight: 400
+            color: $dark
+            width: 100%
+            margin-bottom: 17px
+
+        &-price
+            font-size: 16px
+            font-weight: 700
+            color: $darkpink1
+
+        &-stars
+            font-size: 0px
+            line-height: 1.2
+            font-weight: 400
+            color: $stars
+            transition: font-size 0.4s ease
+
+        &:hover
+            box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.15)
+
+        &:hover &-stars
+            font-size: 15px
+
+        &:hover &-img
+            background-color: $dark-gray3
+
+            &>img
+                opacity: 0.17
+
+        &:hover &-cart-button
+            display: flex
+
+    &__browse-all
+        background-color: $darkpink1
+        border: 1px solid transparent
+        font-size: 16px
+        line-height: 16px
+        font-weight: 700
+        letter-spacing: 0.025em
+        color: $white
+        cursor: pointer
+        padding: 18px 20px 18px 24px
+        transition: all 0.4s ease
+
+        & .fa
+            font-size: 15px
+            margin-left: 9px
+
+        &:hover
+            background-color: $white
+            color: $darkpink1
+            border: 1px solid $darkpink1
+
+    &__bottom-buttons
+        width: 100%
+        display: flex
+        justify-content: space-between
+
+    &__pagination
+
+        &-list
+            display: flex
+            border: 1px solid $light3
+            border-radius: 3px
+            font-size: 20px
+            line-height: 20px
+            font-weight: 700
+            color: $light-shadow
+
+        &-button
+            padding: 15px 7px 15px 14px
+            cursor: pointer
+            transition: color 0.4s ease
+
+            &:last-of-type
+                padding: 15px 14px 15px 7px
+
+            &:hover
+                color: $darkpink2
+
+        &-page
+            color: $light-gray4
+            padding: 15px 7px
+            cursor: pointer
+            transition: color 0.4s ease
+
+            &:nth-of-type(7)
+                padding-right: 0
+
+            &:nth-of-type(9)
+                padding-left: 0
+
+            &_active
+                color: $darkpink2
+
+            &:hover
+                color: $darkpink2
+
+        &-dots
+            padding: 15px 0
+            color: $light-gray4
+            cursor: pointer
+            transition: color 0.4s ease
+
+            &:hover
+                color: $darkpink2
+
+    &__view-all
+        padding: 16px 46px
+        border: 1px solid $darkpink2
+        border-radius: 3px
+        font-size: 16px
+        line-height: 16px
+        font-weight: 700
+        color: $darkpink2
+        transition: all 0.4s ease
+
+        &:hover
+            background-color: $darkpink2
+            color: $white
+
+    &-single-page
+        margin: 33px auto 73px
+
+    &-single-page &__title
+        margin-bottom: 72px
+        font-size: 24px
+        line-height: 20px
+        font-weight: 900
+        text-transform: uppercase
+        color: $dark-gray4
+
+    &-single-page &__cards
+        margin: 0
+
+    &-single-page &__card-name
+        color: $gray
+        font-size: 14px
+
+.shop-info
+    margin: 113px auto 97px
+    display: flex
+    background-color: $dark3
+
+    &__banner
+        display: block
+        position: relative
+        height: 529px
+
+        &-img
+            display: block
+            width: 767px
+            height: 100%
+            object-fit: cover
+
+        &-text
+            position: absolute
+            top: 140px
+            left: 39px
+            width: 300px
+            font-size: 32.2px
+            line-height: 1.2
+            font-weight: 700
+            letter-spacing: 0.025em
+            color: $white
+            text-transform: uppercase
+
+            &-big
+                font-size: 53.7px
+
+                &-pink
+                    color: $darkpink1
+
+    &__info-boxes
+        padding: 48px 43px 48px 32px
+        display: flex
+        width: 100%
+        flex-direction: column
+        justify-content: space-between
+        box-sizing: border-box
+
+    &__info-box
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+
+        &-text
+            width: 224px
+            font-size: 14px
+            line-height: 24px
+            font-weight: 300
+            letter-spacing: 0.025em
+            color: $light4
+
+        &-title
+            font-size: 20px
+            line-height: 1.2
+            font-weight: 700
+            margin-bottom: 12px
+
+.subscribe
+    min-height: 438px
+    background: url('../img/subscribe-bg.png')
+    background-position: center bottom
+    background-repeat: no-repeat
+    background-size: cover
+    padding-top: 111px
+    box-sizing: border-box
+
+    &>.container
+        display: flex
+        min-height: 171px
+        justify-content: space-between
+
+    &__quote-sliders
+        position: relative
+        min-height: 171px
+        display: flex
+        width: 505px
+        overflow: hidden
+
+        &-wrapper
+            width: 300%
+            display: flex
+            transition: all .6s ease
+
+        &-controls
+            &-radio
+                position: absolute
+                visibility: hidden
+
+            &-button
+                position: absolute
+                display: block
+                width: 38px
+                height: 4px
+                background-color: $light-gray4
+                transition: all .4s ease
+                bottom: 0
+                cursor: pointer
+
+                &:nth-of-type(1)
+                    left: 111px
+
+                &:nth-of-type(2)
+                    left: 165px
+
+                &:nth-of-type(3)
+                    left: 216px
+
+                &:hover
+                    background-color: $darkpink1
+                    opacity: 0.7
+
+                #slide1:checked ~ &:nth-of-type(1),
+                #slide2:checked ~ &:nth-of-type(2),
+                #slide3:checked ~ &:nth-of-type(3)
+                    background-color: $darkpink1
+
+        #slide1:checked ~ &-wrapper
+            margin-left: 0
+
+        #slide2:checked ~ &-wrapper
+            margin-left: -505px
+
+        #slide3:checked ~ &-wrapper
+            margin-left: -1010px
+
+    &__quote-slider
+        min-width: 505px
+        display: flex
+
+        &-img
+            margin-right: 28px
+            width: 83px
+            height: 83px
+
+        &-text
+            font-size: 12px
+            line-height: 14px
+            font-weight: 300
+            color: $dark3
+            display: flex
+            flex-direction: column
+
+            &-q
+                font-size: 16px
+                line-height: 26px
+                font-weight: 400
+                font-style: italic
+                letter-spacing: 0.025em
+                color: $dark3
+                margin-bottom: 9px
+
+            &-pink
+                font-size: 16px
+                line-height: 26px
+                font-weight: 700
+                letter-spacing: 0.025em
+                color: $darkpink1
+                text-transform: capitalize
+
+    &__form-box
+        width: 569px
+        font-size: 14px
+        font-weight: 400
+        letter-spacing: 0.025em
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        line-height: 24px
+
+    &__form-title
+        font-size: 24px
+        font-weight: 400
+        line-height: 34px
+        text-transform: uppercase
+        color: $dark3
+
+    &__form-text
+        text-transform: uppercase
+        text-align: center
+
+    &__form
+        display: flex
+        border: none
+        margin-top: 30px
+
+        &-email
+            width: 282px
+            height: 46px
+            background-color: $light5
+            border-radius: 23px 0 0 23px
+            border: 1px solid transparent
+            font-size: 14px
+            font-weight: 400
+            letter-spacing: 0.025em
+            color: $dark3
+            padding: 0 28px
+            box-sizing: border-box
+
+            &::placeholder
+                color: $dark3
+                opacity: 0.67
+                text-transform: capitalize
+
+        &-submit
+            width: 104px
+            height: 46px
+            background-color: $darkpink1
+            border-radius: 0px 23px 23px 0px
+            border: 1px solid transparent
+            color: $white
+            font-size: 14px
+            font-weight: 400
+            letter-spacing: 0.025em
+            cursor: pointer
+            transition: background-color 0.4s ease
+            -webkit-animation: heartbeat 1.5s ease-in-out infinite both
+            animation: heartbeat 1.5s ease-in-out infinite both
+
+.footer-info
+    padding: 109px 0 89px
+    display: flex
+    justify-content: space-between
+
+    &__company-description
+        width: 427px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+        &-text
+            font-size: 14px
+            line-height: 24px
+            font-weight: 300
+            color: $gray2
+            letter-spacing: 0.025em
+
+            &:not(:first-child)
+                margin-top: 20px
+
+    &__nav-wrapper
+        display: flex
+        justify-content: space-between
+
+    &__nav
+        width: 200px
+        letter-spacing: 0.025em
+
+        &-title
+            font-size: 18px
+            line-height: 26px
+            font-weight: 700
+            color: $darkpink1
+            text-transform: uppercase
+            padding-bottom: 29px
+
+        &-link
+            font-size: 16px
+            line-height: 41px
+            font-weight: 400
+            color: $gray2
+            display: block
+            transition: color 0.4s ease
+
+            &:hover
+                color: $darkpink1
+
+.copyrights
+    background-color: $light-border2
+    padding: 33px 0
+    font-size: 16px
+    line-height: 26px
+    font-weight: 400
+    letter-spacing: 0.025em
+    color: $gray3
+
+    &>.container
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &__social-media
+        display: flex
+
+        &-button
+            display: block
+            width: 32px
+            height: 32px
+            cursor: pointer
+            font-size: 16px
+            font-weight: 400
+            letter-spacing: 0.025em
+            color: $light-gray5
+            background: $white
+            border: 1px solid transparent
+            text-align: center
+            box-sizing: border-box
+            transition: all 0.4s ease
+
+            &>.fa
+                vertical-align: middle
+
+            &:not(:last-of-type)
+                margin-right: 8px
+
+            &:hover
+                background-color: $darkpink1
+                color: $white
+
+.main-content-header
+    background-color: $light6
+
+    &>.container
+        padding: 65px 0
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &__title
+        font-size: 24px
+        line-height: 20px
+        font-weight: 900
+        text-transform: uppercase
+        color: $darkpink1
+
+    &__breadcrumb
+        display: flex
+
+        &-item
+            font-size: 14px
+            line-height: 20px
+            font-weight: 300
+            text-transform: uppercase
+            color: $gray4
+
+            &:not(:last-of-type)::after
+                content: "/\00a0"
+
+        &-link
+            font-size: 14px
+            line-height: 20px
+            font-weight: 300
+            text-transform: uppercase
+            color: $gray4
+            transition: color 0.4s ease
+
+        &-item:last-of-type &-link
+            font-weight: 700
+            color: $darkpink1
+
+        &-item &-link:hover
+            color: $lightpink
+
+.product
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    &__img-wrapper
+        width: 100%
+        min-height: 777px
+        background-color: $light7
+        box-sizing: border-box
+        border: 1px solid $light2
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: flex-start
+
+    &__img
+        width: 597px
+        margin-top: 11px
+
+        &-buttons
+            position: absolute
+            display: flex
+            width: 100%
+            justify-content: space-between
+            top: 365px
+
+        &-button
+            padding: 16px 18px 16px 21px
+            border: 1px solid transparent
+            cursor: pointer
+            background-color: rgba(42,42,42,0.14)
+
+            &:last-of-type
+                padding: 16px 21px 16px 18px
+
+            & .fa
+                font-size: 24px
+                line-height: 24px
+                color: $white
+                transition: color 0.4s ease
+
+            &:hover .fa
+                color: $darkpink1
+
+    &__info
+        background-color: $white
+        border: 1px solid $light2
+        box-sizing: border-box
+        position: relative
+        top: -86px
+        padding: 73px 250px 122px
+        font-size: 14px
+        line-height: 24px
+        font-weight: 700
+        text-transform: uppercase
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        &-collection
+            color: $darkpink1
+            border-bottom: 1px solid $light2
+            padding-bottom: 10px
+            position: relative
+
+            &::after
+                content: ''
+                display: block
+                width: 63px
+                height: 3px
+                background-color: $darkpink2
+                position: absolute
+                top: 33px
+                left: 0
+                right: 0
+                margin: 0 auto
+
+        &-name
+            font-size: 18px
+            font-weight: 900
+            margin: 15px 0 59px
+            text-align: center
+
+        &-description
+            text-align: center
+            font-weight: 300
+            color: $gray5
+            text-transform: none
+
+        &-characteristic
+            display: flex
+            color: $light-gray6
+            margin: 18px 0 32px
+            & p:first-child
+                margin-right: 44px
+
+        &-characteristic-value
+            color: $dark4
+
+        &-price
+            font-size: 24px
+            color: $darkpink2
+            width: 100%
+            text-align: center
+            padding-bottom: 43px
+            border-bottom: 1px solid $light2
+
+        &-filters
+            display: flex
+            width: 100%
+            justify-content: space-between
+            margin: 58px 0 28px
+            border: none
+
+        &-form
+            width: 100%
+
+        &-filter
+            display: flex
+            flex-direction: column
+
+            &-text
+                color: $dark4
+                margin-bottom: 11px
+
+            &-field
+                width: 144px
+                height: 35px
+                border: 1px solid $light2
+                font-size: 13px
+                line-height: 24px
+                font-weight: 400
+                color: $light-gray7
+                padding: 0 15px
+                background-color: transparent
+                box-sizing: border-box
+
+        &-button
+            border: 1px solid $darkpink2
+            width: 100%
+            font-size: 16px
+            line-height: 1.2
+            font-weight: 700
+            color: $darkpink2
+            background-color: $white
+            display: flex
+            align-items: center
+            justify-content: center
+            padding: 16px 0
+            cursor: pointer
+            transition: all 0.4s ease
+
+            &-svg
+                margin-right: 15px
+
+                &-path
+                    transition: fill 0.4s ease
+                    fill: $darkpink2
+
+            &:hover
+                color: $white
+                background-color: $darkpink2
+
+            &:hover &-svg-path
+                fill: $white
+
+.catalog
+    display: flex
+    justify-content: space-between
+    margin: 60px auto 110px
+
+    &__sidebar
+        width: 243px
+
+    &__sidebar-accordion
+
+        &:not(:first-of-type)
+            margin-top: 18px
+
+        &-title
+            font-size: 14px
+            line-height: 37px
+            font-weight: 700
+            text-transform: uppercase
+            color: $gray
+            border-bottom: 1px solid $light3
+            border-left: 5px solid $darkpink2
+            padding-left: 12px
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+            &::after
+                content: "\f0d7"
+                font-family: "Font Awesome 5 Free"
+                font-size: 14px
+                color: $gray
+                padding-right: 5px
+                transition: all .4s ease
+
+        &[open] &-title
+            color: $darkpink2
+
+        &[open] &-title::after
+            color: $darkpink2
+            transform: rotate(180deg)
+
+        &-list
+            padding: 13px 0 13px 17px
+
+        &-link
+            display: block
+            font-size: 14px
+            line-height: 33px
+            font-weight: 400
+            color: $gray
+            transition: color 0.4s ease
+
+            &:hover
+                color: $darkpink2
+
+    &__content
+        max-width: 846px
+
+    &__top-filters
+
+        &-button
+            text-transform: uppercase
+            display: none
+            font-size: 14px
+            line-height: 14px
+            font-weight: 700
+            color: $dark
+            background-color: transparent
+            border: none
+            transition: color 0.4s ease
+
+            &:hover
+                color: $darkpink1
+
+        &-content
+            border: none
+            display: flex
+            justify-content: space-between
+
+        &-filter-box
+            width: 262px
+            position: relative
+
+        &-title
+            font-size: 14px
+            line-height: 14px
+            font-weight: 700
+            text-transform: uppercase
+            color: $gray
+            margin-bottom: 12px
+
+        &-filter-box:last-of-type &-title
+            margin-bottom: 24px
+
+        &-list
+            width: 190px
+            display: flex
+            flex-wrap: wrap
+
+        &-tranding-now-link
+            font-size: 14px
+            line-height: 30px
+            font-weight: 400
+            color: $gray
+            padding: 0 10px
+            transition: color 0.4s ease
+
+            &:hover
+                color: $darkpink2
+
+        &-item
+
+            &:not(:nth-of-type(3n+3))::after
+                content: '\007C'
+                color: $light8
+
+        &-item:nth-of-type(3n+1) &-tranding-now-link
+            padding-left: 0
+
+        &-sizes-wrapper
+            display: flex
+            flex-wrap: wrap
+
+        &-checkbox
+            display: none
+
+        &-label
+            width: 65px
+            font-family: 'Open Sans', sans-serif
+            font-size: 14px
+            line-height: 30px
+            font-weight: 400
+            text-transform: uppercase
+            color: $gray
+            display: flex
+            align-items: center
+            cursor: pointer
+
+            &::before
+                content: ''
+                width: 11px
+                height: 11px
+                border: 1px solid $light3
+                margin-right: 9px
+
+        &-checkbox:checked ~ &-label::before
+            border: 1px solid $darkpink2
+            content: '\2714'
+            color: $white
+            background-color: $darkpink2
+            font-size: 11px
+            line-height: 11px
+            text-align: center
+
+        &-price-track
+            width: 100%
+            height: 6px
+            background-color: $light9
+            border-radius: 3px
+
+        &-price
+            appearance: none
+            -moz-appearance: none
+            -webkit-appearance: none
+            -ms-progress-appearance: none
+            width: 100%
+            position: absolute
+            top: 34px
+            background-color: transparent
+            pointer-events: none
+
+            &::-webkit-slider-thumb
+                appearance: none
+                -webkit-appearance: none
+                width: 14px
+                height: 14px
+                background-color: $darkpink1
+                cursor: pointer
+                border-radius: 50%
+                pointer-events: auto
+
+            &::-moz-range-thumb
+                appearance: none
+                -moz-appearance: none
+                width: 14px
+                height: 14px
+                background-color: $darkpink1
+                cursor: pointer
+                border-radius: 50%
+                pointer-events: auto
+
+            &::-ms-thumb
+                appearance: none
+                -ms-progress-appearance: none
+                width: 14px
+                height: 14px
+                background-color: $darkpink1
+                cursor: pointer
+                border-radius: 50%
+                pointer-events: auto
+
+        &-price-values
+            width: 100%
+            display: flex
+            justify-content: space-between
+            font-family: 'Open Sans', sans-serif
+            font-size: 14px
+            line-height: 26px
+            font-weight: 400
+            color: $gray
+            margin-top: 21px
+
+        &-sort
+            background-color: $light10
+            margin-top: 34px
+            display: flex
+            padding: 10px
+            border: none
+
+            &-container
+                display: flex
+                background-color: $white
+                border: 1px solid $light3
+                margin-right: 10px
+                position: relative
+
+            &-label
+                font-size: 14px
+                line-height: 14px
+                font-weight: 400
+                color: $gray
+                text-transform: capitalize
+                padding: 10px 9px 10px 12px
+
+            &-select
+                border: none
+                font-size: 14px
+                line-height: 14px
+                font-weight: 400
+                color: $gray
+                padding: 0px 35px 0px 12px
+                border-left: 1px solid $light3
+                -webkit-appearance: none
+                -moz-appearance: none
+                -ms-appearance: none
+                appearance: none
+                cursor: pointer
+
+            & .fa
+                position: absolute
+                right: 9px
+                font-size: 14px
+                top: 10px
+                cursor: pointer
+                pointer-events: none
+                transition: all .4s ease
+
+            &-select:focus ~ .fa
+                transform: rotate(180deg)
+
+            &-option
+                line-height: 50px
+
+    & .fetured-items__cards
+        margin: 48px 0 43px
+
+.error-block
+    background-color: rgba(205, 92, 92, 0.5)
+    color: #8B0000
+    padding: 20px
+    text-align: center
+    margin-top: 20px
+    border: 2px solid #8B0000
+    font-size: 16px
+    position: relative
+
+.close-error-btn
+    position: absolute
+    top: 0
+    right: 0
+    background-color: transparent
+    cursor: pointer
+    color: #8B0000
+    padding: 5px 10px
+    font-size: 20px
+    transition: all .4s ease
+    border: none
+
+    &:hover
+        color: rgba(139, 0, 0, 0.6)
+
+@import "checkout"
+@import "cart"
+@import "tablet"
+@import "mobile"

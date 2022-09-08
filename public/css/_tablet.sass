@@ -1,0 +1,243 @@
+@media (max-width: 1171px)
+    .container
+        margin: 0 16px
+
+    .main-header
+
+        &__browse-container
+            display: none
+
+        &__search-input
+            border-left: 0
+            border-radius: 3px 0 0 3px
+
+        &__adaptive-links
+            display: flex
+
+        &__top-left
+            width: 100%
+            flex-direction: column
+            align-items: flex-start
+            padding: 16px 0
+
+        &__search
+            margin-top: 16px
+            width: 100%
+            align-self: center
+
+            &-form
+                width: 100%
+
+            &-input
+                width: 100%
+
+        &__left-links
+            display: flex
+            width: 100%
+            justify-content: space-between
+
+        &__top-right
+            display: none
+
+        &__cart-wrapper
+            margin: 0
+
+        &__bottom
+            display: none
+
+    .slider > .container
+        height: 450px
+        background-size: cover
+        background-position-y: center
+
+    .slider__text-box
+        margin-top: 180px
+
+    .slider__text
+        font-size: 24px
+        line-height: 1
+
+    .slider__text-big
+        font-size: 40px
+        margin-bottom: 1vh
+
+    .banners
+        padding: 32px 0
+
+        &__wrapper:first-child
+            margin-right: 20px
+
+        &__text
+            font-size: 14px
+
+        &__text-pink
+            font-size: 20px
+
+    .fetured-items
+        &__cards
+            margin: 32px 0
+
+        &__card
+            width: 23%
+            margin: 0
+
+            &-cart-button
+                top: 25%
+
+    .shop-info
+        margin: 64px 16px
+        flex-direction: column
+
+        &__banner
+            height: 100%
+
+            &-img
+                width: 100%
+
+        &__info-boxes
+            flex-direction: row
+
+        &__info-box
+            flex-direction: column
+            width: 30%
+            align-items: center
+
+            &-text
+                width: 100%
+                margin-top: 12px
+                text-align: center
+
+    .subscribe
+        padding: 64px 0
+
+        &>.container
+            flex-direction: column
+            justify-content: space-between
+            height: 100%
+
+        &__quote-sliders
+            margin: 0 auto
+
+            &-controls-button
+                width: 15%
+
+            &-controls-button:nth-of-type(1)
+                left: 20%
+            &-controls-button:nth-of-type(2)
+                left: 42.5%
+            &-controls-button:nth-of-type(3)
+                left: 65%
+
+        &__form-box
+            width: 100%
+            margin-top: 48px
+
+    .footer-info
+        flex-direction: column
+        padding: 64px 0
+
+        &__company-description
+            width: 100%
+            margin-bottom: 32px
+
+            &-text
+                margin-top: 20px
+
+    .catalog
+        margin: 64px 16px
+
+        &__sidebar
+            width: 20%
+
+        &__content
+            width: 75%
+
+        &__top-filters
+
+            &-filter-box
+                width: 30%
+
+            &-list
+                width: 100%
+
+            &-item:not(:last-of-type)::after
+                content: "|"
+                color: #dfdfdf
+                margin: 0 10px
+
+            &-tranding-now-link
+                padding: 0
+
+        & .fetured-items__card
+            width: 30%
+
+            &-cart-button
+                top: 15%
+
+    .product
+        &__info
+            padding: 64px 130px
+            position: inherit
+            margin: 0
+
+    .fetured-items-single-page
+        margin: 64px 16px
+
+        & .fetured-items__title
+            margin-bottom: 64px
+
+    .checkout
+        margin: 32px 16px
+
+        &__form-wrapper
+            margin-left: 35px
+            justify-content: space-between
+
+        &__form
+            width: 45%
+            padding: 10px 0 32px
+
+        &__form:first-of-type
+            margin: 0
+
+        &__drop-pass-link
+            display: flex
+            align-items: center
+            padding-top: 0
+            line-height: 1.2
+            text-align: center
+
+    .shopping-cart
+        &__products
+            justify-content: space-between
+            margin-top: 64px
+
+            &-info
+                width: 40%
+
+            &-title::after
+                width: 100%
+
+            &-prices
+                width: 55%
+
+        &__product
+            &-link
+                width: 100%
+
+            &-link-wrapper::after
+                width: 250%
+
+        &__form
+            flex-wrap: wrap
+            margin: 64px 0
+
+        &__fieldset
+            width: 45%
+
+        &__fieldset-price
+            width: 100%
+            margin-top: 32px
+
+        &__pink-button
+            width: 80%
